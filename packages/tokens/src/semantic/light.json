@@ -1,0 +1,20 @@
+{
+  "color": {
+    "$type": "color",
+    "background": { "$value": "{color.neutral.0}" },
+    "foreground": { "$value": "{color.neutral.950}" },
+    "primary": { "$value": "{color.neutral.900}" },
+    "primary-foreground": { "$value": "{color.neutral.50}" },
+    "secondary": { "$value": "{color.neutral.100}" },
+    "secondary-foreground": { "$value": "{color.neutral.900}" },
+    "muted": { "$value": "{color.neutral.100}" },
+    "muted-foreground": { "$value": "{color.neutral.500}" },
+    "accent": { "$value": "{color.neutral.100}" },
+    "accent-foreground": { "$value": "{color.neutral.900}" },
+    "destructive": { "$value": "{color.red.600}" },
+    "destructive-foreground": { "$value": "{color.neutral.0}" },
+    "border": { "$value": "{color.neutral.200}" },
+    "input": { "$value": "{color.neutral.200}" },
+    "ring": { "$value": "{color.neutral.400}" }
+  }
+}

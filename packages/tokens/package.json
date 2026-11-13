@@ -1,0 +1,60 @@
+{
+  "name": "@bigbrain-maestro/tokens",
+  "version": "0.0.0",
+  "description": "Design tokens (CSS variables, Tailwind CSS v4 theme and JS references) for Maestro, BigBrain's design system.",
+  "type": "module",
+  "license": "MIT",
+  "author": {
+    "name": "thiagosf-dev",
+    "email": "thiagosf.dev@gmail.com",
+    "url": "https://github.com/thiagosf-dev"
+  },
+  "homepage": "https://github.com/thiagosf-dev/bigbrain-maestro/tree/main/packages/tokens#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thiagosf-dev/bigbrain-maestro.git",
+    "directory": "packages/tokens"
+  },
+  "bugs": {
+    "url": "https://github.com/thiagosf-dev/bigbrain-maestro/issues"
+  },
+  "keywords": [
+    "design-tokens",
+    "design-system",
+    "css-variables",
+    "tailwindcss",
+    "dark-mode",
+    "maestro"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./tokens.css": "./dist/tokens.css",
+    "./theme.css": "./dist/theme.css",
+    "./tokens.json": "./dist/tokens.json"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "node scripts/build.ts",
+    "typecheck": "tsc -p tsconfig.json",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "@bigbrain-maestro/config-typescript": "workspace:*",
+    "@types/node": "catalog:",
+    "style-dictionary": "catalog:",
+    "typescript": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}

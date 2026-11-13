@@ -33,6 +33,7 @@
     "pnpm": ">=12"
   },
   "scripts": {
+    "prepare": "husky",
     "build": "turbo run build",
     "dev": "turbo run dev",
     "typecheck": "turbo run typecheck",
@@ -46,7 +47,10 @@
   },
   "devDependencies": {
     "@bigbrain-maestro/config-biome": "workspace:*",
+    "@bigbrain-maestro/config-husky": "workspace:*",
     "@biomejs/biome": "catalog:",
+    "@commitlint/cli": "catalog:",
+    "husky": "catalog:",
     "turbo": "catalog:",
     "typescript": "catalog:"
   }

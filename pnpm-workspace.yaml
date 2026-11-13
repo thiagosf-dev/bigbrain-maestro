@@ -4,6 +4,13 @@ packages:
   - "packages/*"
   - "packages/config/*"
 
+# Executa os scripts do package.json com um shell compatível com bash em qualquer sistema.
+# Sem isso, no Windows o pnpm usa o cmd.exe e comandos como "rm -rf" falham.
+shellEmulator: true
+
+# Limita downloads simultâneos (padrão: 16). Reduz corridas de I/O do instalador no Windows.
+networkConcurrency: 4
+
 # Catálogo: versão única de cada dependência compartilhada.
 # Os pacotes declaram "catalog:" no lugar da versão e o pnpm resolve daqui.
 # Atualizar uma lib = alterar uma linha neste arquivo.
@@ -39,3 +46,10 @@ catalog:
   "@testing-library/user-event": 14.6.10
   "@testing-library/jest-dom": 7.0.1
   axe-core: 4.14.0
+
+  # Tipos
+  "@types/node": 26.6.6
+  "@commitlint/types": 21.2.3
+
+  # Design tokens
+  style-dictionary: 5.8.0

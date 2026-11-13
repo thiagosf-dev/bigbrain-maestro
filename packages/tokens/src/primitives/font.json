@@ -1,0 +1,11 @@
+{
+  "font": {
+    "family": {
+      "$type": "fontFamily",
+      "sans": {
+        "$value": "ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'"
+      },
+      "mono": { "$value": "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" }
+    }
+  }
+}

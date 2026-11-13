@@ -1,0 +1,61 @@
+{
+  "name": "@bigbrain-maestro/config-husky",
+  "version": "0.0.0",
+  "description": "Git hooks (Husky + commitlint + Biome) and a simple commit convention for Maestro, BigBrain's design system.",
+  "type": "module",
+  "license": "MIT",
+  "author": {
+    "name": "thiagosf-dev",
+    "email": "thiagosf.dev@gmail.com",
+    "url": "https://github.com/thiagosf-dev"
+  },
+  "homepage": "https://github.com/thiagosf-dev/bigbrain-maestro/tree/main/packages/config/husky#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thiagosf-dev/bigbrain-maestro.git",
+    "directory": "packages/config/husky"
+  },
+  "bugs": {
+    "url": "https://github.com/thiagosf-dev/bigbrain-maestro/issues"
+  },
+  "keywords": [
+    "husky",
+    "commitlint",
+    "git-hooks",
+    "conventional-commits",
+    "biome",
+    "maestro"
+  ],
+  "bin": {
+    "maestro-hooks": "./bin/maestro-hooks.js"
+  },
+  "exports": {
+    "./commitlint": "./commitlint.config.js"
+  },
+  "files": [
+    "bin",
+    "commitlint.config.js",
+    "README.md"
+  ],
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@biomejs/biome": ">=2.6.0 <3",
+    "@commitlint/cli": ">=21",
+    "husky": ">=9"
+  },
+  "devDependencies": {
+    "@bigbrain-maestro/config-typescript": "workspace:*",
+    "@commitlint/types": "catalog:",
+    "@types/node": "catalog:",
+    "typescript": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}
