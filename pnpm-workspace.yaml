@@ -8,9 +8,6 @@ packages:
 # Sem isso, no Windows o pnpm usa o cmd.exe e comandos como "rm -rf" falham.
 shellEmulator: true
 
-# Limita downloads simultâneos (padrão: 16). Reduz corridas de I/O do instalador no Windows.
-networkConcurrency: 4
-
 # Catálogo: versão única de cada dependência compartilhada.
 # Os pacotes declaram "catalog:" no lugar da versão e o pnpm resolve daqui.
 # Atualizar uma lib = alterar uma linha neste arquivo.
@@ -53,3 +50,4 @@ catalog:
 
   # Design tokens
   style-dictionary: 5.8.0
+  colorjs.io: 0.7.1
