@@ -1,0 +1,39 @@
+# Dependências
+node_modules/
+
+# Builds
+dist/
+storybook-static/
+*.tsbuildinfo
+
+# Testes e coverage
+coverage/
+test-results/
+playwright-report/
+
+# Cache do Turborepo
+.turbo/
+
+# Pacotes gerados pelo pnpm pack (teste de fumaça)
+*.tgz
+
+# Ambiente
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores (mantém configurações compartilhadas do VS Code)
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
