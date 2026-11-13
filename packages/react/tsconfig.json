@@ -2,7 +2,8 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "@bigbrain-maestro/config-typescript/react.json",
   "compilerOptions": {
-    "customConditions": ["@bigbrain-maestro/source"]
+    "customConditions": ["@bigbrain-maestro/source"],
+    "types": ["@bigbrain-maestro/config-vitest/types"]
   },
   "include": ["src"]
 }
