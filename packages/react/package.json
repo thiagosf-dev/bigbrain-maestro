@@ -1,0 +1,88 @@
+{
+  "name": "@bigbrain-maestro/react",
+  "version": "0.0.0",
+  "description": "React components for Maestro, BigBrain's design system: accessible, themeable and built on Tailwind CSS v4 and shadcn/ui.",
+  "type": "module",
+  "license": "MIT",
+  "author": {
+    "name": "thiagosf-dev",
+    "email": "thiagosf.dev@gmail.com",
+    "url": "https://github.com/thiagosf-dev"
+  },
+  "homepage": "https://github.com/thiagosf-dev/bigbrain-maestro/tree/main/packages/react#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thiagosf-dev/bigbrain-maestro.git",
+    "directory": "packages/react"
+  },
+  "bugs": {
+    "url": "https://github.com/thiagosf-dev/bigbrain-maestro/issues"
+  },
+  "keywords": [
+    "react",
+    "components",
+    "design-system",
+    "tailwindcss",
+    "shadcn",
+    "accessibility",
+    "maestro"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "imports": {
+    "#lib/*": {
+      "@bigbrain-maestro/source": "./src/lib/*.ts",
+      "default": "./dist/lib/*.js"
+    },
+    "#ui/*": {
+      "@bigbrain-maestro/source": "./src/components/ui/*/index.ts",
+      "default": "./dist/components/ui/*/index.js"
+    },
+    "#components/*": {
+      "@bigbrain-maestro/source": "./src/components/*/index.ts",
+      "default": "./dist/components/*/index.js"
+    }
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./styles.css": "./dist/styles.css"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "vite build && tsc -p tsconfig.build.json && tailwindcss -i src/styles/index.css -o dist/styles.css --minify",
+    "typecheck": "tsc -p tsconfig.json && tsc -p tsconfig.node.json",
+    "clean": "rm -rf dist"
+  },
+  "peerDependencies": {
+    "react": "^18.3.0 || ^19.0.0",
+    "react-dom": "^18.3.0 || ^19.0.0"
+  },
+  "dependencies": {
+    "@bigbrain-maestro/tokens": "workspace:*",
+    "clsx": "catalog:",
+    "tailwind-merge": "catalog:"
+  },
+  "devDependencies": {
+    "@bigbrain-maestro/config-typescript": "workspace:*",
+    "@tailwindcss/cli": "catalog:",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "tailwindcss": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}

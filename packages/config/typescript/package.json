@@ -4,6 +4,17 @@
   "description": "Configurações TypeScript compartilhadas do monorepo Maestro (uso interno, não publicado).",
   "private": true,
   "license": "MIT",
+  "author": {
+    "name": "thiagosf-dev",
+    "email": "thiagosf.dev@gmail.com",
+    "url": "https://github.com/thiagosf-dev"
+  },
+  "homepage": "https://github.com/thiagosf-dev/bigbrain-maestro/tree/main/packages/config/typescript#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thiagosf-dev/bigbrain-maestro.git",
+    "directory": "packages/config/typescript"
+  },
   "files": [
     "*.json"
   ]

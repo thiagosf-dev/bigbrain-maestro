@@ -1,10 +1,10 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
-
+  // Configuração da raiz do monorepo: estende o preset publicado pelo próprio projeto
   "root": true,
-
   "extends": ["@bigbrain-maestro/config-biome/react"],
 
+  // Respeita o .gitignore (node_modules, dist, coverage etc.)
   "vcs": {
     "enabled": true,
     "clientKind": "git",
@@ -12,6 +12,55 @@
   },
 
   "files": {
-    "includes": ["**", "!**/CHANGELOG.md", "!pnpm-lock.yaml"]
-  }
+    "includes": [
+      "**",
+      // Gerados automaticamente: não formatar
+      "!**/CHANGELOG.md",
+      "!pnpm-lock.yaml"
+    ]
+  },
+
+  // Regras específicas da Maestro (não fazem parte do preset publicado)
+  "overrides": [
+    {
+      // Componentes só usam tokens: nada de cores cruas do Tailwind nem valores arbitrários
+      "includes": ["packages/react/src/**"],
+      "linter": {
+        "rules": {
+          "nursery": {
+            "noTailwindArbitraryValue": "error",
+            "noTailwindRawColors": {
+              "level": "error",
+              "options": { "allowBlackAndWhite": false }
+            }
+          }
+        }
+      }
+    },
+    {
+      // Fronteiras entre pastas (seção 4.1 do documento de arquitetura)
+      "includes": ["packages/react/src/components/**"],
+      "linter": {
+        "rules": {
+          "style": {
+            "noRestrictedImports": {
+              "level": "error",
+              "options": {
+                "patterns": [
+                  {
+                    "group": ["#components/**"],
+                    "message": "Componentes não importam componentes compostos: atômicos ficam em #ui/*."
+                  },
+                  {
+                    "group": ["../../**"],
+                    "message": "Use os subpath imports (#ui/*, #lib/*) em vez de caminhos relativos que saem da pasta do componente."
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
 }
