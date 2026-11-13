@@ -57,8 +57,16 @@ catalog:
   tailwind-merge: 3.7.0
   "@tailwindcss/cli": 4.3.5
 
+  # Storybook
+  storybook: 10.6.7
+  "@storybook/react-vite": 10.6.7
+  "@storybook/addon-docs": 10.6.7
+  "@storybook/addon-a11y": 10.6.7
+  "@storybook/addon-themes": 10.6.7
+
 allowBuilds:
   "@parcel/watcher": false
+  esbuild: false
 
 minimumReleaseAgeExclude:
   - jsdom@31.0.1

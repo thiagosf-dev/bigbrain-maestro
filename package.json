@@ -43,7 +43,9 @@
     "check:fix": "biome check --write .",
     "lint": "biome lint .",
     "format": "biome format --write .",
-    "clean": "turbo run clean && rm -rf node_modules .turbo"
+    "clean": "turbo run clean && rm -rf node_modules .turbo",
+    "storybook": "turbo run dev --filter=@bigbrain-maestro/storybook",
+    "storybook:build": "turbo run storybook:build"
   },
   "devDependencies": {
     "@bigbrain-maestro/config-biome": "workspace:*",

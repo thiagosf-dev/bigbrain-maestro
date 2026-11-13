@@ -1,0 +1,33 @@
+{
+  "name": "@bigbrain-maestro/storybook",
+  "version": "0.0.0",
+  "description": "Documentação interativa da Maestro (uso interno, não publicado).",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "dev": "storybook dev -p 6006",
+    "storybook:build": "storybook build -o storybook-static",
+    "typecheck": "tsc -p tsconfig.json",
+    "clean": "rm -rf storybook-static"
+  },
+  "devDependencies": {
+    "@bigbrain-maestro/config-typescript": "workspace:*",
+    "@bigbrain-maestro/react": "workspace:*",
+    "@bigbrain-maestro/tokens": "workspace:*",
+    "@storybook/addon-a11y": "catalog:",
+    "@storybook/addon-docs": "catalog:",
+    "@storybook/addon-themes": "catalog:",
+    "@storybook/react-vite": "catalog:",
+    "@tailwindcss/vite": "catalog:",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "storybook": "catalog:",
+    "tailwindcss": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:"
+  }
+}

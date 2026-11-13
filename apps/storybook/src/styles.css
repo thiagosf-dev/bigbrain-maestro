@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@import "@bigbrain-maestro/tokens/tokens.css";
+@import "@bigbrain-maestro/tokens/theme.css";
+/* Classes usadas nos componentes da lib e nas páginas do Storybook */
+@source "../../../packages/react/src";
+@source "./";
+
+@layer base {
+  body {
+    @apply bg-background font-sans text-foreground;
+  }
+}
