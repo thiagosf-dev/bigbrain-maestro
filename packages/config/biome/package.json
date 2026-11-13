@@ -1,0 +1,46 @@
+{
+  "name": "@bigbrain-maestro/config-biome",
+  "version": "0.0.0",
+  "description": "Shared Biome configuration (lint + format) for Maestro, BigBrain's design system.",
+  "type": "module",
+  "license": "MIT",
+  "author": {
+    "name": "thiagosf-dev",
+    "email": "thiagosf.dev@gmail.com",
+    "url": "https://github.com/thiagosf-dev"
+  },
+  "homepage": "https://github.com/thiagosf-dev/bigbrain-maestro/tree/main/packages/config/biome#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thiagosf-dev/bigbrain-maestro.git",
+    "directory": "packages/config/biome"
+  },
+  "bugs": {
+    "url": "https://github.com/thiagosf-dev/bigbrain-maestro/issues"
+  },
+  "keywords": [
+    "biome",
+    "biome-config",
+    "lint",
+    "formatter",
+    "react",
+    "tailwindcss",
+    "maestro"
+  ],
+  "files": [
+    "base.jsonc",
+    "react.jsonc",
+    "README.md"
+  ],
+  "exports": {
+    "./base": "./base.jsonc",
+    "./react": "./react.jsonc"
+  },
+  "peerDependencies": {
+    "@biomejs/biome": ">=2.6.0 <3"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}

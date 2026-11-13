@@ -1,0 +1,30 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.6.7/schema.json",
+
+  "extends": ["./base.jsonc"],
+
+  "tailwind": {
+    "mergeFunctions": ["cn", "clsx", "twMerge"],
+    "variantFunctions": ["cva"]
+  },
+
+  "assist": {
+    "actions": {
+      "source": { "noDuplicateClasses": "on" }
+    }
+  },
+
+  "linter": {
+    "domains": { "react": "recommended" },
+    "rules": {
+      "a11y": { "preset": "recommended" },
+      "correctness": {
+        "useExhaustiveDependencies": "error",
+        "useHookAtTopLevel": "error"
+      },
+      "nursery": {
+        "useTailwindSortedClasses": { "level": "error", "fix": "safe" }
+      }
+    }
+  }
+}
