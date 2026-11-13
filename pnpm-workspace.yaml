@@ -21,6 +21,9 @@ catalog:
   tailwindcss: 4.3.5
   "@tailwindcss/vite": 4.3.5
 
+  # Monorepo
+  turbo: 2.11.11
+
   # Qualidade
   "@biomejs/biome": 2.6.7
   husky: 9.1.7

@@ -1,11 +1,46 @@
 {
   "name": "bigbrain-maestro",
+  "version": "0.0.0",
+  "description": "Raiz do monorepo Maestro: orquestra os pacotes do design system (tokens, componentes React e configurações compartilhadas). Não é publicado no npm.",
   "private": true,
   "type": "module",
+  "license": "MIT",
+  "author": {
+    "name": "thiagosf-dev",
+    "email": "thiagosf.dev@gmail.com",
+    "url": "https://github.com/thiagosf-dev"
+  },
+  "homepage": "https://github.com/thiagosf-dev/bigbrain-maestro#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thiagosf-dev/bigbrain-maestro.git"
+  },
+  "bugs": {
+    "url": "https://github.com/thiagosf-dev/bigbrain-maestro/issues"
+  },
+  "keywords": [
+    "design-system",
+    "component-library",
+    "react",
+    "typescript",
+    "tailwindcss",
+    "shadcn",
+    "monorepo"
+  ],
   "packageManager": "pnpm@12.18.0",
   "engines": {
     "node": ">=24",
     "pnpm": ">=12"
   },
-  "scripts": {}
+   "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "test:coverage": "turbo run test:coverage",
+    "clean": "turbo run clean && rm -rf node_modules .turbo"
+  },
+  "devDependencies": {
+    "turbo": "catalog:"
+  }
 }
