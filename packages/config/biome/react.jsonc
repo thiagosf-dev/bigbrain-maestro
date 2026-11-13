@@ -8,6 +8,10 @@
     "variantFunctions": ["cva"]
   },
 
+  "css": {
+    "parser": { "tailwindDirectives": true }
+  },
+
   "assist": {
     "actions": {
       "source": { "noDuplicateClasses": "on" }
