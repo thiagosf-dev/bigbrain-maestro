@@ -3,6 +3,7 @@
   "display": "Maestro — Node (configs e scripts)",
   "extends": "./base.json",
   "compilerOptions": {
-    "types": ["node"]
+    "types": ["node"],
+    "allowImportingTsExtensions": true
   }
 }
