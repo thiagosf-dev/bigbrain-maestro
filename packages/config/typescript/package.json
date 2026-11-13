@@ -1,0 +1,10 @@
+{
+  "name": "@bigbrain-maestro/config-typescript",
+  "version": "0.0.0",
+  "description": "Configurações TypeScript compartilhadas do monorepo Maestro (uso interno, não publicado).",
+  "private": true,
+  "license": "MIT",
+  "files": [
+    "*.json"
+  ]
+}
