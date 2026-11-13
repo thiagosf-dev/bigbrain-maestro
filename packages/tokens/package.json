@@ -50,6 +50,7 @@
   "devDependencies": {
     "@bigbrain-maestro/config-typescript": "workspace:*",
     "@types/node": "catalog:",
+    "colorjs.io": "catalog:",
     "style-dictionary": "catalog:",
     "typescript": "catalog:"
   },

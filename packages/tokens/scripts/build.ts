@@ -11,6 +11,7 @@
  */
 import { mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
+import Color from 'colorjs.io';
 import StyleDictionary from 'style-dictionary';
 import type { Config, Dictionary, PlatformConfig, TransformedToken } from 'style-dictionary/types';
 
@@ -86,6 +87,35 @@ function toTypeLiteral(tree: VarTree, indent = '  '): string {
   return `{\n${lines.join('\n')}\n${indent.slice(2)}}`;
 }
 
+/** Arredonda para no máximo `digits` casas decimais */
+const round = (value: number, digits: number): number => Number(value.toFixed(digits));
+
+/**
+ * Converte cores em hexadecimal (#rgb, #rrggbb, #rrggbbaa) para oklch().
+ * Valores já em outro formato (oklch, rgb...) passam sem alteração.
+ */
+function hexToOklch(value: string): string {
+  if (!value.startsWith('#')) {
+    return value;
+  }
+  const color = new Color(value).to('oklch');
+  const [lightness, chroma, hue] = color.coords;
+  const l = round(lightness ?? 0, 3);
+  const c = round(chroma ?? 0, 3);
+  // Cores sem saturação (cinzas) não têm matiz definido
+  const h = c === 0 || hue === null || Number.isNaN(hue) ? 0 : round(hue, 3);
+  const alpha = color.alpha ?? 1;
+  const alphaPart = alpha < 1 ? ` / ${round(alpha * 100, 1)}%` : '';
+  return `oklch(${l} ${c} ${h}${alphaPart})`;
+}
+
+StyleDictionary.registerTransform({
+  name: 'maestro/color/oklch',
+  type: 'value',
+  filter: (token: TransformedToken) => token.$type === 'color',
+  transform: (token: TransformedToken) => hexToOklch(String(token.$value)),
+});
+
 StyleDictionary.registerFileHeader({ name: 'maestro/header', fileHeader: () => [HEADER] });
 
 StyleDictionary.registerFormat({
@@ -121,9 +151,9 @@ StyleDictionary.registerFormat({
     `/* ${HEADER} */\nexport declare const vars: ${toTypeLiteral(buildVarTree(dictionary.allTokens))};\n`,
 });
 
-/** Configuração comum às plataformas: nomes em kebab-case com prefixo maestro */
+/** Configuração comum às plataformas: nomes em kebab-case com prefixo maestro e cores em oklch */
 const platformBase: Pick<PlatformConfig, 'transforms' | 'prefix'> = {
-  transforms: ['name/kebab'],
+  transforms: ['name/kebab', 'maestro/color/oklch'],
   prefix: PREFIX,
 };
 
